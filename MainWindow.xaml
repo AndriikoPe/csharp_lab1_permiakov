@@ -6,7 +6,45 @@
         xmlns:local="clr-namespace:permiakov_lab1"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+     <Window.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="5"/>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="Margin" Value="10"/>
+        </Style>
+    </Window.Resources>
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
 
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="Enter your date of birth:"/>
+        <DatePicker Grid.Row="0" Grid.Column="1" Name="datePickerBirthDate" Margin="5"/>
+
+        <Button Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Content="Calculate Age and Zodiac Signs" Click="OnCalculateClick"/>
+
+        <TextBlock Grid.Row="2" Grid.Column="0" Text="Your Age:"/>
+        <TextBlock Grid.Row="2" Grid.Column="1" Name="textBlockAge" Padding="5"/>
+
+        <TextBlock Grid.Row="3" Grid.Column="0" Text="Birthday Message:"/>
+        <TextBlock Grid.Row="3" Grid.Column="1" Name="textBlockBirthdayMessage" Padding="5"/>
+
+        <TextBlock Grid.Row="4" Grid.Column="0" Text="Western Zodiac Sign:"/>
+        <TextBlock Grid.Row="4" Grid.Column="1" Name="textBlockWesternZodiac" Padding="5"/>
+
+        <TextBlock Grid.Row="5" Grid.Column="0" Text="Chinese Zodiac Sign:"/>
+        <TextBlock Grid.Row="5" Grid.Column="1" Name="textBlockChineseZodiac" Padding="5"/>
     </Grid>
 </Window>
