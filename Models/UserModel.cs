@@ -4,7 +4,7 @@ namespace Permiakov.Lab1.Model
 {
     internal class UserModel
     {
-        public DateTime Birthday { get; set; } = DateTime.Today;
+        public DateTime Birthday { get; set; }
 
         public bool HasBirthday => Birthday.Day == DateTime.Today.Day && Birthday.Month == DateTime.Today.Month;
 
@@ -23,6 +23,11 @@ namespace Permiakov.Lab1.Model
                 }
                 return age >= 0 ? age : throw new InvalidOperationException("Age cannot be negative.");
             }
+        }
+
+        public UserModel(DateTime birthday)
+        {
+            Birthday = birthday;
         }
 
         private string CalculateWesternSign()

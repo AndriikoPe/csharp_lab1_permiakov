@@ -8,10 +8,5 @@ namespace permiakov_lab1
         {
             InitializeComponent();
         }
-
-        private void OnCalculateClick(object sender, RoutedEventArgs e)
-        {
-
-        }
     }
 }
