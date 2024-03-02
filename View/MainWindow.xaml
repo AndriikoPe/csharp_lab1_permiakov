@@ -34,7 +34,8 @@
         </Grid.ColumnDefinitions>
 
         <TextBlock Grid.Row="0" Grid.Column="0" Text="Enter your date of birth:"/>
-        <DatePicker Grid.Row="0" Grid.Column="1" Name="datePickerBirthDate" Margin="5"/>
+        <DatePicker Grid.Row="0" Grid.Column="1"
+                    SelectedDate="{Binding BirthDate, Mode=TwoWay}" Margin="5"/>
 
         <Button Grid.Row="1" 
                 Grid.Column="0" 
@@ -43,15 +44,15 @@
                 Command="{Binding CalculateCommand}"/>
 
         <TextBlock Grid.Row="2" Grid.Column="0" Text="Your Age:"/>
-        <TextBlock Grid.Row="2" Grid.Column="1" Name="textBlockAge" Padding="5"/>
+        <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding AgeText, Mode=OneWay}" Padding="5"/>
 
         <TextBlock Grid.Row="3" Grid.Column="0" Text="Birthday Message:"/>
-        <TextBlock Grid.Row="3" Grid.Column="1" Name="textBlockBirthdayMessage" Padding="5"/>
+        <TextBlock Grid.Row="3" Grid.Column="1" Text="{Binding BirthdayMessage, Mode=OneWay}" Padding="5"/>
 
         <TextBlock Grid.Row="4" Grid.Column="0" Text="Western Zodiac Sign:"/>
-        <TextBlock Grid.Row="4" Grid.Column="1" Name="textBlockWesternZodiac" Padding="5"/>
+        <TextBlock Grid.Row="4" Grid.Column="1" Text="{Binding WesternZodiac, Mode=OneWay}" Padding="5"/>
 
         <TextBlock Grid.Row="5" Grid.Column="0" Text="Chinese Zodiac Sign:"/>
-        <TextBlock Grid.Row="5" Grid.Column="1" Name="textBlockChineseZodiac" Padding="5"/>
+        <TextBlock Grid.Row="5" Grid.Column="1" Text="{Binding ChineseZodiac, Mode=OneWay}" Padding="5"/>
     </Grid>
 </Window>
