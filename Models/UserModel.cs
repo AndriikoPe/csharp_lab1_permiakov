@@ -35,19 +35,44 @@ namespace Permiakov.Lab1.Model
             int month = Birthday.Month;
             int day = Birthday.Day;
 
-            if ((month == 1 && day >= 20) || (month == 2 && day <= 18)) return WesternSigns.Aquarius.ToString();
-            if ((month == 2 && day >= 19) || (month == 3 && day <= 20)) return WesternSigns.Pisces.ToString();
-            if ((month == 3 && day >= 21) || (month == 4 && day <= 19)) return WesternSigns.Aries.ToString();
-            if ((month == 4 && day >= 20) || (month == 5 && day <= 20)) return WesternSigns.Taurus.ToString();
-            if ((month == 5 && day >= 21) || (month == 6 && day <= 20)) return WesternSigns.Gemini.ToString();
-            if ((month == 6 && day >= 21) || (month == 7 && day <= 22)) return WesternSigns.Cancer.ToString();
-            if ((month == 7 && day >= 23) || (month == 8 && day <= 22)) return WesternSigns.Leo.ToString();
-            if ((month == 8 && day >= 23) || (month == 9 && day <= 22)) return WesternSigns.Virgo.ToString();
-            if ((month == 9 && day >= 23) || (month == 10 && day <= 22)) return WesternSigns.Libra.ToString();
-            if ((month == 10 && day >= 23) || (month == 11 && day <= 21)) return WesternSigns.Scorpio.ToString();
-            if ((month == 11 && day >= 22) || (month == 12 && day <= 21)) return WesternSigns.Sagittarius.ToString();
-
-            return WesternSigns.Capricorn.ToString();
+            switch (month)
+            {
+                case 1 when day >= 20:
+                case 2 when day <= 18:
+                    return WesternSigns.Aquarius.ToString();
+                case 2 when day >= 19:
+                case 3 when day <= 20:
+                    return WesternSigns.Pisces.ToString();
+                case 3 when day >= 21:
+                case 4 when day <= 19:
+                    return WesternSigns.Aries.ToString();
+                case 4 when day >= 20:
+                case 5 when day <= 20:
+                    return WesternSigns.Taurus.ToString();
+                case 5 when day >= 21:
+                case 6 when day <= 20:
+                    return WesternSigns.Gemini.ToString();
+                case 6 when day >= 21:
+                case 7 when day <= 22:
+                    return WesternSigns.Cancer.ToString();
+                case 7 when day >= 23:
+                case 8 when day <= 22:
+                    return WesternSigns.Leo.ToString();
+                case 8 when day >= 23:
+                case 9 when day <= 22:
+                    return WesternSigns.Virgo.ToString();
+                case 9 when day >= 23:
+                case 10 when day <= 22:
+                    return WesternSigns.Libra.ToString();
+                case 10 when day >= 23:
+                case 11 when day <= 21:
+                    return WesternSigns.Scorpio.ToString();
+                case 11 when day >= 22:
+                case 12 when day <= 21:
+                    return WesternSigns.Sagittarius.ToString();
+                default:
+                    return WesternSigns.Capricorn.ToString();
+            }
         }
 
         private string CalculateChineseSign()
