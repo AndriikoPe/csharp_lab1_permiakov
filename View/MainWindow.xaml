@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:permiakov_lab1"
+        xmlns:local="clr-namespace:permiakov_lab1" xmlns:vm="clr-namespace:permiakov_lab1.ViewModel"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
      <Window.Resources>
@@ -15,6 +15,9 @@
             <Setter Property="Margin" Value="10"/>
         </Style>
     </Window.Resources>
+    <Window.DataContext>
+        <vm:ViewModel/>
+    </Window.DataContext>
     <Grid Margin="20">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -33,7 +36,11 @@
         <TextBlock Grid.Row="0" Grid.Column="0" Text="Enter your date of birth:"/>
         <DatePicker Grid.Row="0" Grid.Column="1" Name="datePickerBirthDate" Margin="5"/>
 
-        <Button Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Content="Calculate Age and Zodiac Signs" Click="OnCalculateClick"/>
+        <Button Grid.Row="1" 
+                Grid.Column="0" 
+                Grid.ColumnSpan="2"
+                Content="Calculate Age and Zodiac Signs"
+                Command="{Binding CalculateCommand}"/>
 
         <TextBlock Grid.Row="2" Grid.Column="0" Text="Your Age:"/>
         <TextBlock Grid.Row="2" Grid.Column="1" Name="textBlockAge" Padding="5"/>
