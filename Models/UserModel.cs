@@ -21,7 +21,7 @@ namespace Permiakov.Lab1.Model
                 {
                     age--;
                 }
-                return age >= 0 ? age : throw new InvalidOperationException("Age cannot be negative.");
+                return age;
             }
         }
 

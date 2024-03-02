@@ -8,7 +8,7 @@ namespace permiakov_lab1.ViewModel
 {
     internal class ViewModel : INotifyPropertyChanged
     {
-        private UserModel? _userModel;
+        private UserModel _userModel;
 
         public event PropertyChangedEventHandler PropertyChanged;
         public DateTime BirthDate
@@ -49,7 +49,7 @@ namespace permiakov_lab1.ViewModel
             {
                 _userModel = new(DateTime.Today);
             }
-
+            
             if (_userModel.Age is >= 0 and <= 135)
             {
                 OnPropertyChanged(nameof(AgeText));
